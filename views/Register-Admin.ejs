@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Admin Sign Up</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="css/BW Forms.css">
+
+    <style>
+
+        .admin-page-bg {
+
+            height: 100vh;
+            position: fixed;
+            background: rgb(0, 0, 0);
+            background: linear-gradient(35deg, rgba(0, 0, 0, 1) 5%, rgba(11, 63, 94, 1) 30%, rgba(253, 187, 45, 1) 100%);
+        }
+
+        .admin-form-wrapper {
+
+            position: absolute;
+            left: 50%;
+            top: 50%; /* pore add korsi r eta vul. */
+            /* transform: translateX(-50%); - this is the original and correct one. */
+            transform: translate(-50%, -50%);
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container-fluid admin-page-bg"></div>
+    <div class="container admin-form-wrapper">
+
+        <div class="container my-4 d-flex">
+            <i class="fa-solid fa-user-secret admin-form-logo mx-auto"></i>
+        </div>
+
+        <div class="container bw-form mb-4">
+
+            <div class="diamond"></div>
+
+            <form action="/api/registerAdmin" method="post" class="container-fluid">
+
+                <div class="my-4">
+                    <p class="text-center" style="color: var(--bootstrap-warning);">
+
+                        <% if(message === "Success") { %>
+
+                            Admin Registered Successfully!
+
+                        <% } else { %>
+
+                            <%= message %>
+
+                        <% } %>
+
+                    </p>
+                </div>
+
+                <div class="my-3" style="position: relative;">
+
+                    <i class="fa-solid fa-user bw-form-icon"></i>
+                    <input type="text" name="username" class="container-fluid bw-form-input" placeholder="Username"
+                        required>
+
+                </div>
+
+                <div class="my-3" style="position: relative;">
+
+                    <i class="fa-solid fa-at bw-form-icon"></i>
+                    <input type="email" name="email" class="container-fluid bw-form-input" placeholder="Email" required>
+
+                </div>
+
+                <div class="my-3" style="position: relative;">
+
+                    <i class="fa-solid fa-lock bw-form-icon"></i>
+                    <input type="password" name="password" id="password" class="container-fluid bw-form-input"
+                    onkeyup="check()" placeholder="Password" required>
+
+                </div>
+
+                <div class="my-3" style="position: relative;">
+
+                    <i class="fa-solid fa-lock bw-form-icon"></i>
+                    <input type="password" name="confirmPassword" id="confirmPassword"
+                        class="container-fluid bw-form-input" onkeyup="check()" placeholder="Confirm Password" required>
+
+                </div>
+
+                <span id="Confirm_password_message"></span>
+
+                <div class="my-3" style="position: relative;">
+
+                    <i class="fa-solid fa-phone-volume bw-form-icon" style="font-size: 14px;"></i>
+                    <input type="text" name="phone" class="container-fluid bw-form-input" placeholder="Phone Number"
+                        required>
+
+                </div>
+
+                <div class="my-3 d-flex">
+
+                    <div>
+                        <a href="/adminLogin" class="bw-form-links">Admin Login</a>
+                    </div>
+
+                    <div class="ms-auto">
+                        <a href="/" class="bw-form-links">Back to Website</a>
+                    </div>
+
+                </div>
+
+                <button type="submit" class="btn bw-form-btn container-fluid mb-3">Sign Up</button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script>
+
+        var check = function () {
+            if (document.getElementById('password').value ==
+                document.getElementById('confirmPassword').value) {
+                document.getElementById('Confirm_password_message').style.color = '#adff2f';
+                document.getElementById('Confirm_password_message').innerHTML = 'Passwords are matching.';
+            } else {
+                document.getElementById('Confirm_password_message').style.color = '#dc3545';
+                document.getElementById('Confirm_password_message').style.fontSize = '16px';
+                document.getElementById('Confirm_password_message').innerHTML = 'Passwords are not matching.';
+            }
+        }
+
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

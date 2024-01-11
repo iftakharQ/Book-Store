@@ -1,0 +1,117 @@
+<!-- include header -->
+
+<%- include('include/_header') %>
+
+    <!-- include header -->
+
+
+    <!-- Alert Section -->
+    <div class="Alert hide" id="top">
+        <div class="alert bg-dark text-light" role="alert">
+
+            <span class="alert-info">
+                <i class="fa-solid fa-basket-shopping"></i>
+            </span>
+            <span class="alert-info">Book Added to Cart!</span>
+
+            <span class="alert-cross" id="alert-cross">
+                <button class="btn btn-danger" style="padding: 0;">
+                    <i class="fa-solid fa-xmark py-1 px-2"></i>
+                </button>
+            </span>
+
+        </div>
+    </div>
+    <!-- Alert Section -->
+
+
+    <!-- Main Body -->
+    <div class="container">
+
+        <!-- Sort -->
+        <hr>
+        <div class="sort-nav d-flex">
+
+            <span class="me-auto px-5 sort-nav-header">Explore</span>
+
+            <div class="dropdown-center px-5">
+                <a class="nav-link dropdown-toggle sort-nav-header" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Sort
+                </a>
+
+                <ul class="dropdown-menu">
+
+                    <li><a class="dropdown-item" href="/nameASC">Name [A-Z]</a></li>
+                    <li><a class="dropdown-item" href="/nameDSC">Name [Z-A]</a></li>
+
+                    <li><a class="dropdown-item" href="/priceLowHigh">Price [Low - Hight]</a></li>
+                    <li><a class="dropdown-item" href="/priceHighLow">Price [High - Low]</a></li>
+
+                </ul>
+            </div>
+
+        </div>
+        <hr>
+
+    </div>
+
+    <!-- Book section -->
+
+    <div class="container" id="books" style="border-bottom: 2px solid #3D5962;">
+
+        <!-- Show books -->
+        <div class="row justify-content-center mx-3">
+
+            <%- include('include/_showBooks') %>
+
+        </div>
+
+        <div class="d-flex pb-3">
+            <div class="ms-auto me-auto">
+
+                <% if(Page> 1) { %>
+
+                    <a href="/allBooks?page=<%= Page - 1 %>" style="text-decoration: none;">
+                        <button type="button" class="btn btn-paging">
+                            << </button>
+                    </a>
+
+                    <a href="/allBooks?page=<%= Page - 1 %>" style="text-decoration: none;">
+                        <button type="button" class="btn btn-paging">
+                            <%= Page - 1 %>
+                        </button>
+                    </a>
+
+                    <% } %>
+
+                        <a href="/allBooks?page=<%= Page %>" style="text-decoration: none;">
+                            <button type="button" class="btn btn-paging">
+                                <%= Page %>
+                            </button>
+                        </a>
+
+                        <% if(Skip + Limit < PageCount) { %>
+
+                            <a href="/allBooks?page=<%= Page + 1 %>" style="text-decoration: none;">
+                                <button type="button" class="btn btn-paging">
+                                    <%= Page + 1 %>
+                                </button>
+                            </a>
+
+                            <a href="/allBooks?page=<%= Page + 1 %>" style="text-decoration: none;">
+                                <button type="button" class="btn btn-paging"> >> </button>
+                            </a>
+
+                            <% } %>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- include footer -->
+
+    <%- include('include/_footer') %>
+
+        <!-- include footer -->

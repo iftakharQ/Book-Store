@@ -1,0 +1,76 @@
+<!-- include header -->
+
+<%- include('include/_header') %>
+
+<!-- include header -->
+
+<div class="container">
+
+    <div class="container my-4 d-flex">
+        <i class="fa-regular fa-user bw-form-logo mx-auto"></i>
+    </div>
+
+    <div class="container bw-form mb-4">
+
+        <div class="diamond"></div>
+
+        <form method="post" action="/api/login" class="container-fluid">
+
+            <% if(message != "") { %>
+
+                <div class="my-4">
+                    <p class="text-center" style="color: var(--bootstrap-warning); font-size: 15px;">
+                        <i class="fa-solid fa-circle-exclamation"></i>
+                        <span> Couldn't Find User Account. </span>
+                    </p>
+                </div>
+        
+            <% } %>
+
+            <div class="my-3" style="position: relative;">
+
+                <i class="fa-solid fa-user bw-form-icon"></i>
+                <input type="text" name="username" class="container-fluid bw-form-input" placeholder="Username" required>
+
+            </div>
+
+            <div class="my-3" style="position: relative;">
+
+                <i class="fa-solid fa-at bw-form-icon"></i>
+                <input type="email" name="email" class="container-fluid bw-form-input" placeholder="Email" required>
+
+            </div>
+
+            <div class="my-3" style="position: relative;">
+
+                <i class="fa-solid fa-lock bw-form-icon"></i>
+                <input type="password" name="password" id="password" class="container-fluid bw-form-input"
+                    placeholder="Password" required>
+
+            </div>
+
+            <div class="my-3 d-flex">
+
+                <div>
+                    <a href="/registerUser" class="bw-form-links">Sign Up</a>
+                </div>
+
+                <div class="ms-auto">
+                    <a href="/adminLogin" class="bw-form-links">Admin Login</a>
+                </div>
+
+            </div>
+
+            <button type="submit" class="btn bw-form-btn container-fluid mb-3">Login</button>
+
+        </form>
+
+    </div>
+
+</div>
+
+<!-- include footer -->
+
+<%- include('include/_footer') %>
+
+<!-- include footer -->

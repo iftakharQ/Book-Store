@@ -1,0 +1,184 @@
+:root {
+
+    --main-background: #06273A;
+    --background-light: #0b3f5e;
+    --background-almond: #F3F2EC;
+    --main-text-color: #F7EBC6;
+    --bootstrap-dark: #212529;
+    --bootstrap-light: #FFFFFF;
+    --bootstrap-primary: #0d6efd;
+    --bootstrap-info: #0dcaf0;
+    --bootstrap-warning: #ffc107;
+    --bootstrap-danger: #dc3545;
+    --bootstrap-success: #198754;
+    --bootstrap-purple: #6f42c1;
+    --bootstrap-indigo: #6610f2;
+    --bootstrap-teal: #20c997;
+    --gold: #C39F43;
+    --light-grey: #F6F6F6;
+}
+
+/* New cart */
+a {
+
+    text-decoration: none;
+}
+
+.la-shopping-bag {
+
+    color: #005C6D;
+    font-size: 25px;
+}
+
+.cart-circle {
+
+    padding: 0px 5px 0px 5px;
+    /* top, right, bottom, left */
+    background-color: red;
+    border-radius: 50%;
+    font-size: 12px;
+    font-weight: 600;
+    color: aliceblue;
+    position: relative;
+    bottom: 10px;
+}
+
+.show-nav-items {
+
+    display: none;
+}
+
+.show-nav-items .nav-item .nav-link {
+
+    color: var(--bootstrap-light);
+}
+
+/* After login profiel things */
+.profile-ul>li>a {
+
+    color: var(--bootstrap-light);
+}
+
+.profile-ul>li>a:hover {
+
+    color: var(--bootstrap-dark);
+}
+
+.profile-btn {
+
+    border: none;
+    color: var(--background-light);
+    font-weight: 600;
+}
+
+/* Catagory dropdown */
+.catagory-dropdown .dropdown-menu {
+
+    min-width: 720px;
+    background-color: var(--background-light);
+}
+
+.catagory-dropdown .row .col > ul {
+
+    list-style-type: none;
+}
+
+.catagory-list {
+
+    color: var(--background-almond);
+    font-size: 12px;
+}
+
+.catagory-list:hover {
+
+    text-decoration: 1px underline solid var(--background-almond);
+}
+
+@media only screen and (max-width: 991.5px) {
+
+    .show-nav-items {
+
+        display: initial;
+    }
+
+    /* .show-nav-items > ul > li:hover {
+
+        background-color: var(--background-light);
+    } */
+
+    #navtwo {
+
+        display: none;
+    }
+
+    .offcanvas-header {
+
+        background-color: var(--background-light);
+    }
+
+    .offcanvas-body {
+
+        background-color: var(--main-background);
+    }
+
+    .cart {
+
+        position: absolute;
+        /* padding-top: 0.5rem; */
+    }
+
+    .la-shopping-bag {
+
+        color: var(--bootstrap-light);
+    }
+
+    .search-input {
+
+        border: 2px solid var(--bootstrap-light);
+    }
+
+    .search-button {
+
+        /* background-color: var(--bootstrap-dark);
+        color: var(--bootstrap-light); */
+        background-color: var(--bootstrap-light);
+        color: var(--bootstrap-dark);
+    }
+
+    .search-button:hover {
+
+        background-color: var(--bootstrap-light);
+        color: darkcyan;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+
+    .nav-logo {
+
+        font-size: 20px;
+        font-family: 'Rye', cursive
+    }
+}
+
+.login {
+
+    font-size: 18px;
+    font-weight: 500;
+    color: #005C6D;
+}
+
+.login-btn {
+
+    font-size: 20px;
+    background-color: #005C6D;
+    color: aliceblue;
+    border: none;
+    border-radius: 5px;
+}
+
+.login-btn:hover {
+
+    background-color: darkcyan;
+    color: azure;
+}

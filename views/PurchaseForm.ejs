@@ -1,0 +1,91 @@
+<!-- include header -->
+
+<%- include('include/_header') %>
+
+<!-- include header -->
+
+    <!-- Main body -->
+<div class="container py-5 my-4" style="border-radius: 15px;">
+
+    <div class="container form-title">
+
+        <h2 style="color: black;">SHIPPING DETAILS</h2>
+        <span class="light-text">Use the below form to add your shipping information</span>
+
+    </div>
+
+    <div class="container">
+
+        <div class="container my-4 d-flex">
+            <i class="fa-regular fa-user bw-form-logo mx-auto"></i>
+        </div>
+    
+        <div class="container bw-form mb-4">
+    
+            <div class="diamond"></div>
+    
+            <form action="/confirmCheckOut" method="POST" id="shipping-details" class="container-fluid">
+    
+                <div class="my-3" style="position: relative;">
+    
+                    <i class="fa-solid fa-user bw-form-icon"></i>
+                    <input type="text" name="username" class="container-fluid bw-form-input" placeholder="Username" value="<%= UserInfo.Username %>" required>
+    
+                </div>
+    
+                <div class="my-3" style="position: relative;">
+    
+                    <i class="fa-solid fa-at bw-form-icon"></i>
+                    <input type="email" name="email" class="container-fluid bw-form-input" placeholder="Email" value="<%= UserInfo.Email %>" required>
+    
+                </div>
+    
+                <div class="my-3" style="position: relative;">
+    
+                    <i class="fa-solid fa-location-arrow bw-form-icon"></i>
+                    <input type="text" name="address" class="container-fluid bw-form-input" placeholder="Address" value="<%= UserInfo.Address %>" required>
+    
+                </div>
+    
+                <div class="my-3 row">
+    
+                    <div class="col-6" style="position: relative;">
+    
+                        <i class="fa-solid fa-city bw-form-icon bw-row-icon"
+                            style="font-size: 12px; padding-top: 12px; padding-bottom: 12px;"></i>
+                        <input type="text" name="city" class="container-fluid bw-form-input" placeholder="City" value="<%= UserInfo.City %>" required>
+    
+                    </div>
+    
+                    <div class="col-6" style="position: relative;">
+    
+                        <i class="fa-solid fa-location-dot bw-form-icon  bw-row-icon"></i>
+                        <input type="text" name="zipcode" class="container-fluid bw-form-input" placeholder="Zip Code" value="<%= UserInfo['Zip code'] %>" required>
+    
+                    </div>
+    
+                </div>
+    
+                <div class="my-3" style="position: relative;">
+    
+                    <i class="fa-solid fa-phone-volume bw-form-icon" style="font-size: 14px;"></i>
+                    <input type="text" name="phone" class="container-fluid bw-form-input" placeholder="Phone Number" value="<%= UserInfo.Phone %>" required>
+    
+                </div>
+    
+                <button type="submit" class="btn bw-form-btn container-fluid mb-3" onclick="checkAlert()">Purchase</button>
+    
+            </form>
+    
+        </div>
+
+    </div>
+
+</div>
+<!-- Main body -->
+
+<!-- include footer -->
+
+<%- include('include/_footer') %>
+
+<!-- include footer -->

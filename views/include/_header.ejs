@@ -1,0 +1,514 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>
+    <%= title %>
+  </title>
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="css/HomePage.css">
+  <link rel="stylesheet" href="css/Cart.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/About.css">
+
+  <link rel="stylesheet" href="css/User-form.css">
+
+  <link rel="stylesheet" href="css/Alert.css">
+
+  <link rel="stylesheet" href="css/Invoice.css">
+
+  <link rel="stylesheet" href="css/BW Forms.css">
+
+  <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- JQuery -->
+  <!-- <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
+    integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</head>
+
+<body>
+
+  <div class="Free-delivery p-2">
+    <span style="color: orangered;">Free</span>
+    Delivery Above $30.00
+  </div>
+
+  <div class="container">
+
+    <nav class="navbar navbar-expand-lg">
+
+        <a class="navbar-brand my-auto" href="/">
+            <div class="nav-logo">
+                <span>Whispering </span>
+                <span style="color: #C0A02E;">Bookshelves</span>
+            </div>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarOffcanvasLg"
+            aria-controls="navbarOffcanvasLg" aria-label="Toggle navigation">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="navbarOffcanvasLg"
+            aria-labelledby="navbarOffcanvasLgLabel">
+
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+                    <span style="color: white;">Whispering </span>
+                    <span style="color: #C0A02E;">Bookshelves</span>
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+
+            <div class="offcanvas-body">
+
+                <div class="container-fluid d-lg-flex">
+
+                    <div class="container-fluid px-0 my-auto mx-4 ms-auto" style="max-width: 700px;">
+
+                        <form class="d-flex" role="search" method="POST" action="/search">
+                            <div class="input-group mt-2">
+                                <input name="search" type="text" class="form-control search-input"
+                                    placeholder="Search By Name or Author..." aria-label="Recipient's username"
+                                    aria-describedby="button-addon2">
+                                <button class="btn search-button" type="submit" id="button-addon2">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </div>
+                        </form>
+
+                    </div>
+
+                    <div class="show-nav-items">
+
+                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 my-3">
+
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="/">Home</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="/about">About</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="/allBooks">Shop</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="/catagories">Catagories</a>
+                            </li>
+
+                            <% if(UserType === "Admin") { %>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/dash-home">Dashboard</a>
+                                </li>
+
+                            <% } %>
+
+                            <% if(User === "" || User === undefined) { %>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/login">
+                                        <i class="fa-regular fa-user text-light"></i>
+                                        Login
+                                    </a>
+                                </li>
+
+                            <% } else { %>
+
+                                <li class="nav-item">
+
+                                    <div class="dropdown-center">
+                                        <button class="btn dropdown-toggle text-light p-0" type="button"
+                                            data-bs-toggle="dropdown" aria-expanded="false" style="border: none;">
+                                            <%= User %>
+                                        </button>
+                                        <ul class="dropdown-menu">
+    
+                                            <li>
+                                                <a class="dropdown-item" href="#">
+                                                    <i class="fa-regular fa-user"></i>
+                                                    Profile
+                                                </a>
+                                            </li>
+    
+                                            <li>
+                                                <a class="dropdown-item" href="/api/logout">
+                                                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                                                    Logout
+                                                </a>
+                                            </li>
+    
+                                        </ul>
+                                    </div>
+    
+                                </li>
+
+                            <% } %>
+
+                        </ul>
+
+                    </div>
+
+                    <a href="/myCart" class="ms-auto d-flex my-auto cart">
+                        <i class="las la-shopping-bag"></i>
+                        <span class="cart-circle my-auto mx-auto"><%= CartLen %></span>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+</div>
+
+<div id="navtwo">
+
+    <div class="container d-flex py-3">
+
+        <ul class="d-flex my-auto px-0" style="list-style-type: none;">
+
+            <a href="/" style="text-decoration: none;" class="pe-3">
+                <li class="below-search-nav underline">Home</li>
+            </a>
+
+            <a href="/about" style="text-decoration: none;" class="px-3">
+                <li class="below-search-nav underline">About</li>
+            </a>
+
+            <a href="/allBooks" style="text-decoration: none;" class="px-3">
+                <li class="below-search-nav underline">Shop</li>
+            </a>
+
+            <li class="underline">
+
+                <div class="dropdown-center catagory-dropdown">
+
+                    <button class="btn dropdown-toggle py-0 my-auto pb-1" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false" style="border: none;">
+                        <span class="below-search-nav">Catagories</span>
+                    </button>
+
+                    <ul class="dropdown-menu px-3">
+
+                        <div class="row">
+
+                            <div class="col-4">
+
+                                <li class="my-2">
+                                    <a href="/category?cat=Crime & Thriller" class="catagory-list">
+                                        <i class="fa-solid fa-skull-crossbones orange"></i>
+                                        Crime & Thriller
+                                    </a>
+                                </li>
+
+                                <li class="my-2">
+                                    <a href="/category?cat=Romance" class="catagory-list">
+                                        <i class="fa-solid fa-heart orange"></i>
+                                        Romance
+                                    </a>
+                                </li>
+
+                                <li class="my-2">
+                                    <a href="/category?cat=Fiction" class="catagory-list">
+                                        <i class="fa-brands fa-space-awesome orange"></i>
+                                        Fiction
+                                    </a>
+                                </li>
+
+                                <li class="my-2">
+                                    <a href="/category?cat=Mystery" class="catagory-list">
+                                        <i class="fa-solid fa-user-secret orange"></i>
+                                        Mystery
+                                    </a>
+                                </li>
+
+                                <li class="my-2">
+                                    <a href="/category?cat=Literature" class="catagory-list">
+                                        <i class="fa-solid fa-feather-pointed orange"></i>
+                                        Literature
+                                    </a>
+                                </li>
+
+                                <li class="my-2">
+                                    <a href="/category?cat=Classic" class="catagory-list">
+                                        <i class="fa-solid fa-tree orange"></i>
+                                        Classic
+                                    </a>
+                                </li>
+
+                                <li class="my-2">
+                                    <a href="/category?cat=Biography" class="catagory-list">
+                                        <i class="fa-solid fa-book-open-reader orange"></i>
+                                        Biography
+                                    </a>
+                                </li>
+
+                                <li class="my-2">
+                                    <a href="/category?cat=Fantasy" class="catagory-list">
+                                        <i class="fa-solid fa-hat-wizard orange"></i>
+                                        Fantasy
+                                    </a>
+                                </li>
+
+                                <li class="my-2">
+                                    <a href="/category?cat=Literary Fiction" class="catagory-list">
+                                        <i class="fa-solid fa-masks-theater orange"></i>
+                                        Literary Fiction
+                                    </a>
+                                </li>
+
+                                <li class="my-2">
+                                    <a href="/category?cat=Poetry" class="catagory-list">
+                                        <i class="fa-solid fa-pen-nib orange"></i>
+                                        Poetry
+                                    </a>
+                                </li>
+
+                            </div>
+
+                            <div class="col-4">
+
+                                <li class="my-2">
+                                    <a href="/category?cat=Folklore & Mythology" class="catagory-list">
+                                        <i class="fa-solid fa-dragon orange"></i>
+                                        Folklore & Mythology
+                                    </a>
+                                </li>
+
+                                <li class="my-2">
+                                    <a href="/category?cat=Science Fiction & Fantasy" class="catagory-list">
+                                        <i class="fa-sharp fa-solid fa-jedi orange"></i>
+                                        Science Fiction & Fantasy
+                                    </a>
+                                </li>
+
+                                <li class="my-2">
+                                    <a href="/category?cat=YA Fantasy" class="catagory-list">
+                                        <i class="fa-solid fa-wand-sparkles orange"></i>
+                                        YA Fantasy
+                                    </a>
+                                </li>
+
+                                <li class="my-2">
+                                    <a href="/category?cat=YA Graphic" class="catagory-list">
+                                        <i class="fa-solid fa-tablet-screen-button orange"></i>
+                                        YA Graphic
+                                    </a>
+                                </li>
+
+                                <li class="my-2">
+                                    <a href="/category?cat=COOKBOOKS, FOOD & WINE" class="catagory-list">
+                                        <i class="fa-solid fa-utensils orange"></i>
+                                        COOKBOOKS, FOOD & WINE
+                                    </a>
+                                </li>
+
+                                <li class="my-2">
+                                    <a href="/category?cat=Crafts & Hobbies" class="catagory-list">
+                                        <i class="fa-solid fa-compass-drafting orange"></i>
+                                        Crafts & Hobbies
+                                    </a>
+                                </li>
+
+                                <li class="my-2">
+                                    <a href="/category?cat=History" class="catagory-list">
+                                        <i class="fa-solid fa-landmark-dome orange"></i>
+                                        History
+                                    </a>
+                                </li>
+
+                                <li class="my-2">
+                                    <a href="/category?cat=Humor" class="catagory-list">
+                                        <i class="fa-sharp fa-solid fa-face-grin-beam orange"></i>
+                                        Humor
+                                    </a>
+                                </li>
+
+                                <li class="my-2">
+                                    <a href="/category?cat=Nature" class="catagory-list">
+                                        <i class="fa-solid fa-mountain-sun orange"></i>
+                                        Nature
+                                    </a>
+                                </li>
+
+                                <li class="my-2">
+                                    <a href="/category?cat=Philosophy" class="catagory-list">
+                                        <i class="fa-solid fa-lightbulb orange"></i>
+                                        Philosophy
+                                    </a>
+                                </li>
+
+                            </div>
+
+                            <div class="col-4">
+
+                                <li class="my-2">
+                                    <a href="/category?cat=Religious Books & More" class="catagory-list">
+                                        <i class="fa-solid fa-place-of-worship orange"></i>
+                                        Religious Books & More
+                                    </a>
+                                </li>
+
+                                <li class="my-2">
+                                    <a href="/category?cat=Self-Help & Relationship" class="catagory-list">
+                                        <i class="fa-solid fa-hand-holding-heart orange"></i>
+                                        Self-Help & Relationship
+                                    </a>
+                                </li>
+
+                                <li class="my-2">
+                                    <a href="/category?cat=Traveling" class="catagory-list">
+                                        <i class="fa-sharp fa-solid fa-cart-flatbed-suitcase orange"></i>
+                                        Traveling
+                                    </a>
+                                </li>
+
+                                <li class="my-2">
+                                    <a href="/category?cat=Kids' Books" class="catagory-list">
+                                        <i class="fa-solid fa-children orange"></i>
+                                        Kids' Books
+                                    </a>
+                                </li>
+
+                                <li class="my-2">
+                                    <a href="/category?cat=Academic" class="catagory-list">
+                                        <i class="fa-solid fa-graduation-cap orange"></i>
+                                        Academic
+                                    </a>
+                                </li>
+
+                                <li class="my-2">
+                                    <a href="/category?cat=Art" class="catagory-list">
+                                        <i class="fa-solid fa-brush orange"></i>
+                                        Art
+                                    </a>
+                                </li>
+
+                                <li class="my-2">
+                                    <a href="/category?cat=Paranormal" class="catagory-list">
+                                        <i class="fa-solid fa-ghost orange"></i>
+                                        Paranormal
+                                    </a>
+                                </li>
+
+                                <li class="my-2">
+                                    <a href="/category?cat=Sociology" class="catagory-list">
+                                        <i class="fa-solid fa-people-roof orange"></i>
+                                        Sociology
+                                    </a>
+                                </li>
+
+                                <li class="my-2">
+                                    <a href="/category?cat=Sports" class="catagory-list">
+                                        <i class="fa-solid fa-baseball-bat-ball orange"></i>
+                                        Sports
+                                    </a>
+                                </li>
+
+                                <li class="my-2">
+                                    <a href="/category?cat=Psychology" class="catagory-list">
+                                        <i class="fa-solid fa-brain orange"></i>
+                                        Psychology
+                                    </a>
+                                </li>
+
+                            </div>
+
+                        </div>
+
+                    </ul>
+                </div>
+
+            </li>
+
+            <% if(UserType === "Admin") { %>
+
+                <a href="/dash-home" style="text-decoration: none;" class="px-3">
+                    <li class="below-search-nav underline" style="border: none;">Dashboard</li>
+                </a>
+
+            <% } %>
+
+        </ul>
+
+        <% if(User === "" || User === undefined) { %>
+
+            <ul class="d-flex my-auto px-0 ms-auto" style="list-style: none;">
+
+                <a href="/login" style="text-decoration: none;" class="px-3">
+                    <li class="login" style="border-right: none;">
+    
+                        <i class="fa-regular fa-user mx-1" style="font-weight: 400;"></i>
+                        <span>Login</span>
+    
+                    </li>
+                </a>
+    
+            </ul>
+
+        <% } else { %>
+
+            <ul class="d-flex my-auto px-0 ms-auto" style="list-style: none;">
+
+                <div class="dropdown-center">
+                    <button class="btn profile-btn dropdown-toggle py-0 pb-1" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+    
+                        <%= User %>
+    
+                    </button>
+                    <ul class="dropdown-menu bg-dark profile-ul">
+    
+                        <li>
+                            <a class="dropdown-item" href="#">
+                                <i class="fa-regular fa-user"></i>
+                                Profile
+                            </a>
+                        </li>
+    
+                        <li>
+                            <a class="dropdown-item" href="/api/logout">
+                                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                                Logout
+                            </a>
+                        </li>
+    
+                    </ul>
+                </div>
+    
+            </ul>
+
+        <% } %>
+
+    </div>
+
+</div>
+
+  <!-- Banner -->
+
+  <div class="mb-2">
+
+    <img src="images/B & N/7. Banner HD.png" class="banner">
+
+  </div>
+
+  <!-- Banner -->

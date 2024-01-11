@@ -1,0 +1,70 @@
+:root {
+
+    --dark:#2b2d42;
+    --light: #adb5bd;
+    --warning: #FFCA2C;
+    --danger: #BB2D3B; 
+    --info: #31D2F2;
+}
+
+.container > div.container {
+
+    max-width: 1024px;
+}
+
+.user-link {
+    text-decoration: none;
+    color: aliceblue;
+}
+
+.form-title {
+
+    text-align: center;
+}
+
+.form-title > h2 {
+    color: aliceblue;
+}
+
+.light-text {
+
+    color: var(--light);
+    font-family: 'Barlow', sans-serif;
+    font-size: 18px;
+}
+
+#add_user .form-group,
+#update_user .form-group {
+
+    margin: .4em 0;
+}
+
+#add_user .radio,
+#update_user .radio   {
+
+    display: flex;
+}
+
+.form-group > div button {
+
+    background-color: aqua;
+    font-size: 20px;
+}
+
+.form-group > div button:hover {
+
+    background-color: var(--warning);
+    color: var(--dark);
+}
+
+.lable-color {
+    color: aliceblue;
+}
+
+.update-show-image {
+
+    max-width: 480px;
+    max-height: 500px;
+    border: 15px inset indianred; /* #B25E16 */
+    /* border-radius: 0.5rem; */
+}

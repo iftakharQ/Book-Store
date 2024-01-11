@@ -1,0 +1,131 @@
+<!-- include header -->
+
+<%- include('include/_header') %>
+
+    <!-- include header -->
+
+
+    <!-- Alert Section -->
+    <div class="Alert hide" id="top">
+        <div class="alert bg-dark text-light" role="alert">
+
+            <span class="alert-warning">
+                <i class="fa-solid fa-trash-can"></i>
+            </span>
+            <span class="alert-warning">Book Removed From Cart!</span>
+
+            <span class="alert-cross" id="alert-cross">
+                <button class="btn btn-danger" style="padding: 0;">
+                    <i class="fa-solid fa-xmark py-1 px-2"></i>
+                </button>
+            </span>
+
+        </div>
+    </div>
+    <!-- Alert Section -->
+
+
+    <!-- Main Body -->
+    <div class="container my-4">
+
+        <div class="container-fluid text-center py-4"
+            style="background-color: #EFD1BC; font-size: 18px; border-radius: 3px;">
+
+            <span class="px-1"><i class="fa-solid fa-truck-moving"></i></span>
+            <span style="font-weight: 500;">FREE SHIPPING ON ORDERS OF $40+</span>
+
+        </div>
+
+    </div>
+
+    <!-- Empty Cart -->
+    <% if(CartLen==0) { %>
+
+        <div class="container text-center my-5" style="font-size: 30px; font-family:'Times New Roman', Times, serif;">
+
+            <div>Your cart is empty.</div>
+            <div>Start shopping and get free shipping on orders of $40+.</div>
+
+        </div>
+
+        <div class="container text-center my-5">
+
+            <a href="/" style="text-decoration: none;">
+                <div class="py-3 px-5 d-inline-block"
+                    style="background-color: #254D3E; color: white; font-family:'Times New Roman', Times, serif;">
+                    SHOP NOW
+                </div>
+            </a>
+
+        </div>
+        <% } else { %>
+            <!-- Empty Cart -->
+
+
+            <!-- Cart -->
+
+            <div class="container my-4 p-4 text-center" style="padding: 0;">
+
+                <h3 style="font-family:'Times New Roman', Times, serif;">Your Cart <i
+                        class="fa-solid fa-basket-shopping"></i></h3>
+
+                <div class="container">
+                    <table class="table table-dark table-striped"
+                        style="border-collapse: separate; border-spacing: 0 15px;">
+
+                        <tbody class="text-center">
+
+                            <% for(var i=0; i < Cart.length; i++) { %>
+
+                                <tr style="width: fit-content;">
+                                    <td style="padding-top: .8em; vertical-align: middle;"> <img
+                                            src="uploads/<%= Cart[i].image %>" class="cart-img"> </td>
+                                    <td style="padding-top: .8em; vertical-align: middle;">
+                                        <%= Cart[i].name %>
+                                    </td>
+                                    <td style="padding-top: .8em; vertical-align: middle;">By <%= Cart[i].author %>
+                                    </td>
+                                    <td style="padding-top: .8em; vertical-align: middle;">$<%= Cart[i].price %>
+                                    </td>
+
+                                    <td class="col-md-2" style="vertical-align: middle;">
+
+                                        <a href="/cart-remove?id=<%= Cart[i]._id %>" class="btn btn-light"
+                                            onclick="checkAlert()">
+                                            <i class="fa-solid fa-trash-can"></i>
+                                        </a>
+
+                                    </td>
+
+                                </tr>
+
+                                <% } %>
+
+                        </tbody>
+                    </table>
+
+                    <div class="container my-3 text-center"
+                        style="font-size: 30px; font-family: 'Times New Roman', Times, serif; font-weight: 800;">
+                        Total Price: $<%= Total_Price %>
+                    </div>
+
+                    <a href="/checkOut" style="text-decoration: none;">
+                        <div class="py-3 px-5 d-inline-block"
+                            style="background-color: #254D3E; color: white; font-family:'Times New Roman', Times, serif;">
+                            CHECK OUT
+                        </div>
+                    </a>
+
+                </div>
+
+            </div>
+            <% } %>
+
+                <!-- Cart -->
+
+
+                <!-- include footer -->
+
+                <%- include('include/_footer') %>
+
+                    <!-- include footer -->

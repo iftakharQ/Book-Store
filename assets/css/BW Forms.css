@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow&family=Lato&family=Merriweather&family=PT+Sans&family=Rye&display=swap');
+
+:root {
+
+    --main-background: #06273A;
+    --background-light: #0b3f5e;
+    --background-almond: #F3F2EC;
+    --main-text-color: #F7EBC6;
+    --bootstrap-dark: #212529;
+    --bootstrap-light: #FFFFFF;
+    --bootstrap-primary: #0d6efd;
+    --bootstrap-info: #0dcaf0;
+    --bootstrap-warning: #ffc107;
+    --bootstrap-danger: #dc3545;
+    --bootstrap-success: #198754;
+    --bootstrap-purple: #6f42c1;
+    --bootstrap-indigo: #6610f2;
+    --bootstrap-teal: #20c997;
+    --gold: #C39F43;
+    --light-grey: #F6F6F6;
+}
+
+.bw-form {
+
+    max-width: 720px;
+    display: flex;
+    background-color: var(--bootstrap-dark);
+    color: var(--bootstrap-light);
+    position: relative;
+}
+
+.bw-form-input {
+
+    outline: none;
+    border: 1.5px solid var(--bootstrap-light);
+    border-radius: 3px;
+    background-color: var(--bootstrap-dark);
+    color: greenyellow;
+    padding: 8px 15px 8px 3.5rem;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.bw-form-input:focus {
+
+    border: 1.5px solid greenyellow;
+}
+
+.bw-form-input:-webkit-autofill,
+.bw-form-input:-webkit-autofill:hover,
+.bw-form-input:-webkit-autofill:focus,
+.bw-form-input:-webkit-autofill:active {
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: greenyellow;
+    transition: background-color 5000s ease-in-out 0s;
+    box-shadow: inset 0 0 20px 20px var(--bootstrap-dark);
+    /* this is actually chaning the background color. */
+}
+
+.bw-form-icon {
+
+    padding: 10px 15px 10px 15px;
+    background-color: #2e3338;
+    border-top-left-radius: 1.5px;
+    border-top-right-radius: 1.5px;
+    position: absolute;
+    top: 50%;
+    left: 0.3%;
+    transform: translateY(-49.5%);
+    opacity: 0.5;
+}
+
+.bw-row-icon {
+
+    background-color: #2e3338;
+    opacity: 0.5;
+    left: 14px;
+}
+
+/* After logo */
+.diamond {
+
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    border-left: 40px solid transparent;
+    border-right: 40px solid transparent;
+    border-bottom: 40px solid var(--bootstrap-dark);
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+}
+
+.bw-form-links {
+
+    color: greenyellow;
+    text-decoration: none;
+}
+
+.bw-form-links:hover {
+
+    text-decoration: underline;
+}
+
+.bw-form-logo {
+
+    /* background: rgb(11,63,94);
+background: linear-gradient(35deg, rgba(11,63,94,1) 23%, rgba(253,187,45,1) 100%); */
+
+    background: rgb(11, 63, 94);
+    background: linear-gradient(35deg, rgba(11, 63, 94, 1) 30%, rgba(253, 187, 45, 1) 100%);
+
+    /* background-color: var(--bootstrap-danger); */
+    padding: 35px;
+    font-size: 35px;
+    border-radius: 100%;
+    opacity: 0.8;
+}
+
+.bw-form-btn {
+
+    background-color: greenyellow;
+    border-radius: 3px;
+    font-weight: 600;
+    font-family: 'Merriweather', serif;
+}
+
+.bw-form-btn:hover {
+
+    background-color: forestgreen;
+    color: var(--main-background);
+}
+
+/* Admin form */
+.admin-form-logo {
+
+    padding: 35px;
+    font-size: 35px;
+    border-radius: 100%;
+    background-color: var(--bootstrap-dark);
+    color: darkgray;
+}
+
+.admin-form-container {
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#admin-outside-container {
+
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    /* background: rgb(0, 0, 0);
+    background: linear-gradient(35deg, rgba(0, 0, 0, 1) 0%, rgba(11, 63, 94, 1) 20%, rgba(253, 187, 45, 1) 100%); */
+    /* background: rgb(0, 0, 0);
+    background: linear-gradient(35deg, rgba(0, 0, 0, 1) 6%, rgba(11, 63, 94, 1) 35%, rgba(253, 187, 45, 1) 100%); */
+    background: rgb(0, 0, 0);
+    background: linear-gradient(35deg, rgba(0, 0, 0, 1) 5%, rgba(11, 63, 94, 1) 30%, rgba(253, 187, 45, 1) 100%);
+}

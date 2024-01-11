@@ -1,0 +1,103 @@
+<!-- Header -->
+<%- include('include/_dash-header') %>
+    <!-- Header -->
+
+
+    <!-- Alert Section -->
+    <div class="Alert hide" id="top">
+        <div class="alert text-light" role="alert" style="background-color: #293853;">
+
+            <span class="alert-success">
+                <i class="fa-solid fa-circle-check"></i>
+            </span>
+            <span class="alert-success">Book Added Successfully!</span>
+
+            <span class="alert-cross" id="alert-cross">
+                <button class="btn btn-danger" style="padding: 0;">
+                    <i class="fa-solid fa-xmark py-1 px-2"></i>
+                </button>
+            </span>
+
+        </div>
+    </div>
+    <!-- Alert Section -->
+
+
+    <!-- Main body -->
+    <div class="container">
+
+        <div>
+            <a href="/dash-home" class="user-link">
+                <div class="new-update-user">
+                    <i class="fa-solid fa-angles-left"></i>
+                    All Books
+                    <i class="fa-solid fa-book"></i>
+                </div>
+            </a>
+        </div>
+
+        <div class="container form-title">
+
+            <h2>Add Books</h2>
+            <span class="light-text">Use the below form to add a new book</span>
+
+        </div>
+
+        <div class="container">
+
+            <form action="/api/add-book" method="POST" id="add-book" enctype="multipart/form-data">
+
+                <div class="my-4">
+                    <label for="image" class="form-label light-text">Choose Book Image</label>
+                    <input class="form-control" type="file" id="image" name="image" required>
+                </div>
+
+                <div class="my-4">
+                    <label for="name" class="form-label light-text">Book Name</label>
+                    <input type="hidden" name="" id="" value="">
+                    <input type="text" class="form-control p-3" id="name" name="name" placeholder="Enter Book Name"
+                        required>
+                </div>
+
+                <div class="my-4">
+                    <label for="author" class="form-label light-text">Author</label>
+                    <input type="text" class="form-control p-3" id="author" name="author"
+                        placeholder="Enter Author Name" required>
+                </div>
+
+                <div class="my-4">
+
+                    <label for="category" class="form-label light-text">Category</label>
+                    <select class="form-select form-select-lg" aria-label="Default select example" name="category">
+                        <% for(var i = 0; i < Category.length; i++) { %>
+                            <option value="<%= Category[i] %>"><%= Category[i] %></option>
+                        <% } %>
+                    </select>
+
+                </div>
+
+                <div class="my-4">
+
+                    <label for="price" class="form-label light-text">Price</label>
+                    <input type="text" class="form-control p-3" id="price" name="price" placeholder="Enter Price"
+                        required>
+
+                </div>
+
+                <div class="form-group">
+                    <div class="d-grid gap-2 py-2">
+                        <button class="btn py-2" type="submit" onclick="checkAlert()">Add Book</button>
+                    </div>
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+    <!-- Main body -->
+
+
+    <!-- footer -->
+    <%- include('include/_dash-footer') %>
+        <!-- footer -->

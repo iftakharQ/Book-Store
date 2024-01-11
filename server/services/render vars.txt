@@ -1,0 +1,61 @@
+"/" => res.render('homePage', { title: "Home Page", Books: response.data })
+
+"Crime & Thriller",
+
+"Romance",
+
+"Fiction",
+
+"Mystery",
+
+"Literature",
+
+"Classic",
+
+"Biography",
+
+"Fantasy",
+
+"Literary Fiction",
+
+"Poetry",
+
+"Folklore & Mythology",
+
+"Science Fiction & Fantasy",
+
+"YA Fantasy",
+
+"YA Graphic",
+
+"COOKBOOKS, FOOD & WINE",
+
+"Crafts & Hobbies",
+
+"History",
+
+"Humor",
+
+"Nature",
+
+"Philosophy",
+
+"Religious Books & More",
+
+"Self-Help & Relationship",
+
+"Traveling",
+
+"Kids' Books",
+
+"Academic",
+
+"Art",
+
+"Paranormal",
+
+"Sociology",
+
+"Sports",
+
+"Psychology"

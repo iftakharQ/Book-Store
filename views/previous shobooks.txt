@@ -1,0 +1,18 @@
+// In home page:
+
+<!-- <div class="row justify-content-around" style="margin-left: auto; margin-right: auto;">
+
+        <%- include('include/_showBooks') %>
+
+</div> -->
+
+// In show books ejs file:
+<!-- <div class="col-sm pb-4">
+        <div class="card" style="max-width: 12rem;">
+            <img src="images/Books/<%= Books[i].image %>" alt="" class="book-img">
+            <div class="card-body">
+                <h5><%= Books[i].name %></h5>
+                <p class="d-flex"><h5>Price: $<%= Books[i].price %></h5></p>
+            </div>
+        </div>
+    </div> -->

@@ -1,0 +1,145 @@
+<!-- Header -->
+<%- include('include/_dash-header') %>
+  <!-- Header -->
+
+
+  <!-- Alert Section -->
+  <div class="Alert hide" id="top">
+    <div class="alert text-light" role="alert" style="background-color: #293853;">
+
+      <span class="alert-danger">
+        <i class="fa-solid fa-trash-can"></i>
+      </span>
+      <span class="alert-danger">Book Removed From Database!</span>
+
+      <span class="alert-cross" id="alert-cross">
+        <button class="btn btn-danger" style="padding: 0;">
+          <i class="fa-solid fa-xmark py-1 px-2"></i>
+        </button>
+      </span>
+
+    </div>
+  </div>
+  <!-- Alert Section -->
+
+
+  <!-- Main body -->
+  <div class="container">
+
+    <div class="d-flex">
+
+      <a href="/add-books" class="user-link">
+        <div class="new-update-user">
+          <i class="fa-solid fa-angles-left"></i>
+          Add Books
+          <i class="fa-solid fa-book"></i>
+        </div>
+      </a>
+
+      <a href="/" class="user-link ms-auto">
+        <button class="btn btn-outline-light p-1">
+          <span class="p-2">
+            <i class="fa-solid fa-house-chimney-window"></i>
+            Go to Home
+          </span>
+        </button>
+      </a>
+
+    </div>
+
+    <table class="table">
+      <thead class="table-dark">
+        <tr>
+          <th class="col-md-1">ID</th>
+          <th class="col-md-1">Image</th>
+          <th class="col-md-3">Book Name</th>
+          <th class="col-md-3">Category</th>
+          <th class="col-md-2">Price</th>
+          <th class="col-md-2">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <% for(var i=0; i < Books.length; i++) { %>
+
+          <tr>
+            <td class="col-md-1" style="padding-top: .8em; vertical-align: middle;">
+              <%= i+1 %>
+            </td>
+            <td class="col-md-1" style="padding-top: .8em; vertical-align: middle;">
+              <img src="uploads/<%= Books[i].image %>" alt="" class="mb-1 dash-book-image">
+            </td>
+            <td class="col-md-3" style="padding-top: .8em; vertical-align: middle;">
+              <%= Books[i].name %>
+                <p>By <%= Books[i].author %>
+                </p>
+            </td>
+            <td class="col-md-3" style="padding-top: .8em; vertical-align: middle;">
+              <%= Books[i].category %>
+            </td>
+            <td class="col-md-2" style="padding-top: .8em; vertical-align: middle;">$<%= Books[i].price %>
+            </td>
+            <td class="col-md-2" style="vertical-align: middle;">
+
+              <a href="/update-book?id=<%= Books[i]._id %>" class="btn">
+                <i class="fa-solid fa-pencil"></i>
+              </a>
+
+              <a href="/api/delete-book/<%= Books[i]._id %>" class="btn" onclick="checkAlert()">
+                <i class="fa-solid fa-trash-can"></i>
+              </a>
+
+            </td>
+          </tr>
+
+          <% } %>
+
+      </tbody>
+    </table>
+
+    <div class="d-flex">
+      <div class="ms-auto me-auto my-3">
+
+        <% if(Page> 1) { %>
+
+          <a href="/dash-home?page=<%= Page - 1 %>" style="text-decoration: none;">
+            <button type="button" class="btn btn-outline-warning"> << </button>
+          </a>
+
+          <a href="/dash-home?page=<%= Page - 1 %>" style="text-decoration: none;">
+            <button type="button" class="btn btn-outline-warning">
+              <%= Page - 1 %>
+            </button>
+          </a>
+
+          <% } %>
+
+            <a href="/dash-home?page=<%= Page %>" style="text-decoration: none;">
+              <button type="button" class="btn btn-outline-warning">
+                <%= Page %>
+              </button>
+            </a>
+
+            <% if(Skip + Limit < PageCount) { %>
+
+              <a href="/dash-home?page=<%= Page + 1 %>" style="text-decoration: none;">
+                <button type="button" class="btn btn-outline-warning">
+                  <%= Page + 1 %>
+                </button>
+              </a>
+
+              <a href="/dash-home?page=<%= Page + 1 %>" style="text-decoration: none;">
+                <button type="button" class="btn btn-outline-warning"> >> </button>
+              </a>
+
+              <% } %>
+      </div>
+    </div>
+
+  </div>
+  <!-- Main body -->
+
+
+  <!-- footer -->
+  <%- include('include/_dash-footer') %>
+    <!-- footer -->

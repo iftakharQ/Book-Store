@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow&family=PT+Sans:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Rye&display=swap');
+
+:root {
+
+    --warning: #FFCA2C;
+    --danger: #BB2D3B; 
+    --info: #31D2F2;
+}
+
+.header {
+
+    background-color: aqua;
+    color: black;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 25px;
+    font-weight:bolder;
+    text-align: center;
+    padding: 10px 0;
+    margin-bottom: 3em;
+}
+
+body {
+    background-color: #212529;
+}
+
+.user-link {
+    text-decoration: none;
+    color: aliceblue;
+}
+
+.user-link:hover {
+    color:steelblue;
+}
+
+.table {
+    background-color: aliceblue;
+}
+
+th {
+
+    margin: auto;
+    text-align: center;
+    font-size: 20px;
+    border: 1px solid aliceblue;
+}
+
+td {
+
+    text-align: center;
+    font-size: 18px;
+    font-size: bold;
+}
+
+.new-update-user {
+
+    font-size: 1.3em;
+    margin-bottom: 2em;
+}
+
+tbody tr:hover {
+
+    background-color: darkcyan; /* cadetblue */
+    color: aliceblue;
+    border: 1px solid aliceblue;
+}
+
+tbody tr td a {
+
+    text-decoration: none;
+    border: 1px solid var(--border-btn);
+}
+
+tbody tr td a.btn {
+
+    background-color: var(--warning)
+}
+
+tbody tr td a.btn:hover {
+
+    background-color: var(--danger);
+    color: white;
+}
+
+.dash-book-image {
+
+    max-width: 140px;
+    max-height: 180px;
+    height: 100vw;
+    border: 10px inset indianred;
+}

@@ -1,0 +1,145 @@
+<!-- include header -->
+
+<%- include('include/_header') %>
+
+<!-- include header -->
+
+
+<!-- Alert Section -->
+<div class="Alert hide" id="top">
+    <div class="alert bg-dark text-light" role="alert">
+
+        <span class="alert-success">
+            <i class="fa-solid fa-circle-check"></i>
+        </span>
+        <span class="alert-success">Purchase Successfull!</span>
+
+        <span class="alert-cross" id="alert-cross">
+            <button class="btn btn-danger" style="padding: 0;">
+                <i class="fa-solid fa-xmark py-1 px-2"></i>
+            </button>
+        </span>
+
+    </div>
+</div>
+<!-- Alert Section -->
+
+
+<!-- Main body -->
+<div class="container receipt my-5">
+
+    <div class="container-fluid receipt-header">INVOICE</div>
+
+    <div class="container receipt px-4 py-4">
+
+        <div class="row d-flex">
+
+            <div class="col-lg-8 me-auto">
+                <p>Billed to:</p>
+                <p class="receipt-data"><%= info.Username %></p>
+                <p class="receipt-data" style="word-wrap: break-word;"><%= info.Email %></p>
+                <p class="receipt-data"><%= info.Address %></p>
+                <p class="receipt-data"><%= info.City %></p>
+                <p class="receipt-data"><%= info["Zip Code"] %></p>
+                <p class="receipt-data"><%= info.Phone %></p>
+                <p class="receipt-data">
+                    <i class="fa-solid fa-truck"></i>
+                    <span>Cash On Delivery</span>
+                </p>
+            </div>
+
+            <div class="col-lg-4 my-lg-auto mt-4">
+
+                <div class="row">
+                    <div class="col d-flex">
+                        <p class="ms-lg-auto my-0">Total Amount</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col d-flex">
+                        <p class="ms-lg-auto receipt-price">$<%= info["Total Price"] %></p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="container receipt px-4 py-4">
+
+        <table class="table table-stripe">
+            <thead class="table-info">
+              <tr>
+                <th scope="col" class="text-center px-4">#</th>
+                <th scope="col" class="text-center px-4">Book</th>
+                <th scope="col" class="text-center px-4">Price</th>
+              </tr>
+            </thead>
+            <tbody>
+
+                <% for(var i = 0; i < info["Purchased Books"].length; i++) { %>
+
+                    <tr>
+                        <th scope="row" class="text-center px-4"><%= i + 1 %></th>
+                        <td class="text-center px-4"><%= info["Purchased Books"][i].Book %></td>
+                        <td class="text-center px-4"><%= info["Purchased Books"][i].Price %></td>
+                    </tr>
+
+                <% } %>
+
+            </tbody>
+          </table>
+
+    </div>
+
+    <div class="container receipt px-4 py-4">
+
+        <div class="row ms-auto" style="width: fit-content;">
+
+            <div class="col-6 d-flex px-5">
+                <p class="ms-auto receipt-footer">Subtotal</p>
+            </div>
+
+            <div class="col-6 d-flex px-4">
+                <p class="ms-auto" style="font-weight: 600;">$<%= Subtotal %></p>
+            </div>
+
+        </div>
+
+        <div class="row ms-auto" style="width: fit-content;">
+
+            <div class="col-6 d-flex px-5">
+                <p class="ms-auto me-2 receipt-footer">Delivery</p>
+            </div>
+
+            <div class="col-6 d-flex px-4">
+                <p class="ms-auto" style="font-weight: 600;">$8.00</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="container text-center my-5">
+
+    <a href="/" style="text-decoration: none;">
+        <div class="py-3 px-5 d-inline-block"
+            style="background-color: #254D3E; color: white; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+            CONTINUE SHOPPING
+        </div>
+    </a>
+
+</div>
+<!-- Main body -->
+
+
+<!-- include footer -->
+
+<%- include('include/_footer') %>
+
+<!-- include footer -->

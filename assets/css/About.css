@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow&family=Lato&family=Merriweather&family=PT+Sans&family=Rye&display=swap');
+
+:root {
+
+    --main-background: #06273A;
+    --background-light: #0b3f5e;
+    --background-almond: #F3F2EC;
+    --main-text-color: #F7EBC6;
+    --bootstrap-dark: #212529;
+    --bootstrap-light: #FFFFFF;
+    --bootstrap-primary: #0d6efd;
+    --bootstrap-info: #0dcaf0;
+    --bootstrap-warning: #ffc107;
+    --bootstrap-danger: #dc3545;
+    --bootstrap-success: #198754;
+    --bootstrap-purple: #6f42c1;
+    --bootstrap-indigo: #6610f2;
+    --bootstrap-teal: #20c997;
+    --gold: #C39F43;
+    --light-grey: #F6F6F6;
+}
+
+.about-icon-circle {
+
+    width: 240px;
+    height: 240px;
+    background-color: var(--background-light);
+    border-radius: 100%;
+    /* border-radius: 0.5rem; */
+}
+
+.about-icon-square {
+
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+
+    /* width: 150px;
+    height: 150px; */
+    /* background-color: var(--background-almond); */
+    /* border-radius: 0.5rem; */
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* rotate: 45deg;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-70%); */
+}
+
+.about-icon-img {
+
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 100%;
+    transition: 0.5s;
+}
+
+.about-icon-img:hover {
+
+    z-index: 1;
+    transform: scale(1.2);
+    transition: 0.5s;
+}
+
+.about-bookshop-square {
+
+    width: 240px;
+    height: 240px;
+    border-radius: 0.5rem;
+    background-color: var(--background-light);
+}
+
+.about-bookshop-img {
+
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.5s;
+}
+
+.about-bookshop-img:hover {
+
+    width: 240px;
+    height: 240px;
+    transition: 0.5s;
+    z-index: 1;
+}
+
+.about-description {
+
+    min-width: 20rem;
+    /* border: 1px solid var(--bootstrap-dark);
+    border-radius: 0.5rem; */
+    background-color: var(--background-light);
+    border-radius: 0.5rem;
+    color: var(--background-almond);
+    font-family: 'Merriweather', serif;
+    font-size: 14px;
+    box-shadow: -10px 10px 10px var(--bootstrap-dark);
+    border: 1px solid var(--background-almond);
+}
+
+.hide-bookshop-img {
+
+    display: none;
+}
+
+@media only screen and (max-width: 767.5px) {
+
+    .show-bookshom-img {
+
+        display: none;
+    }
+
+    .hide-bookshop-img {
+
+        display: unset;
+    }
+}

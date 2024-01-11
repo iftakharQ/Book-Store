@@ -1,0 +1,161 @@
+<!-- include header -->
+
+<%- include('include/_header') %>
+
+    <!-- include header -->
+
+
+    <!-- Alert Section -->
+    <div class="Alert hide" id="top">
+        <div class="alert bg-dark text-light" role="alert">
+
+            <% if(message==="" ) { %>
+
+                <span class="alert-success">
+                    <i class="fa-solid fa-circle-check"></i>
+                </span>
+                <span class="alert-success">Registration Successfull!</span>
+
+                <% } else { %>
+
+                    <span class="alert-warning">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                    </span>
+                    <span class="alert-warning">User Already Registered!</span>
+
+                    <% } %>
+
+                        <span class="alert-cross" id="alert-cross">
+                            <button class="btn btn-danger" style="padding: 0;">
+                                <i class="fa-solid fa-xmark py-1 px-2"></i>
+                            </button>
+                        </span>
+
+        </div>
+    </div>
+    <!-- Alert Section -->
+
+
+    <div class="container">
+
+        <div class="container my-4 d-flex">
+            <i class="fa-regular fa-user bw-form-logo mx-auto"></i>
+        </div>
+    
+        <div class="container bw-form mb-4">
+    
+            <div class="diamond"></div>
+    
+            <form action="/api/registerUser" method="POST" class="container-fluid" id="shipping-details">
+
+                <div class="my-4">
+                    <p class="text-center" style="color: var(--bootstrap-warning);">
+                        <%= message %>
+                    </p>
+                </div>
+    
+                <div class="my-3" style="position: relative;">
+    
+                    <i class="fa-solid fa-user bw-form-icon"></i>
+                    <input type="text" name="username" class="container-fluid bw-form-input" placeholder="Username" required>
+    
+                </div>
+    
+                <div class="my-3" style="position: relative;">
+    
+                    <i class="fa-solid fa-at bw-form-icon"></i>
+                    <input type="email" name="email" class="container-fluid bw-form-input" placeholder="Email" required>
+    
+                </div>
+    
+                <div class="my-3" style="position: relative;">
+    
+                    <i class="fa-solid fa-lock bw-form-icon"></i>
+                    <input type="password" name="password" id="password" class="container-fluid bw-form-input"
+                        placeholder="Password" onkeyup="check()" required>
+    
+                </div>
+    
+                <div class="my-3" style="position: relative;">
+    
+                    <i class="fa-solid fa-lock bw-form-icon"></i>
+                    <input type="password" name="confirmPassword" id="confirmPassword" class="container-fluid bw-form-input"
+                        placeholder="Confirm Password" onkeyup="check()" required>
+    
+                </div>
+    
+                <span id='Confirm_password_message'></span>
+    
+                <div class="my-3" style="position: relative;">
+    
+                    <i class="fa-solid fa-location-arrow bw-form-icon"></i>
+                    <input type="text" name="address" class="container-fluid bw-form-input" placeholder="Address" required>
+    
+                </div>
+    
+                <div class="my-3 row">
+    
+                    <div class="col-6" style="position: relative;">
+    
+                        <i class="fa-solid fa-city bw-form-icon bw-row-icon"
+                            style="font-size: 12px; padding-top: 12px; padding-bottom: 12px;"></i>
+                        <input type="text" name="city" class="container-fluid bw-form-input" placeholder="City" required>
+    
+                    </div>
+    
+                    <div class="col-6" style="position: relative;">
+    
+                        <i class="fa-solid fa-location-dot bw-form-icon  bw-row-icon"></i>
+                        <input type="text" name="zipcode" class="container-fluid bw-form-input" placeholder="Zip Code" required>
+    
+                    </div>
+    
+                </div>
+    
+                <div class="my-3" style="position: relative;">
+    
+                    <i class="fa-solid fa-phone-volume bw-form-icon" style="font-size: 14px;"></i>
+                    <input type="text" name="phone" class="container-fluid bw-form-input" placeholder="Phone Number" required>
+    
+                </div>
+
+                <div class="my-3 d-flex">
+    
+                    <div>
+                        <a href="/login" class="bw-form-links">Login</a>
+                    </div>
+    
+                </div>
+    
+                <button type="submit" class="btn bw-form-btn container-fluid mb-3" onclick="checkAlert()">Sign Up</button>
+    
+            </form>
+    
+        </div>
+
+    </div>
+
+
+<!-- Scripts -->
+    <script>
+
+        var check = function () {
+            if (document.getElementById('password').value ==
+                document.getElementById('confirmPassword').value) {
+                document.getElementById('Confirm_password_message').style.color = '#adff2f';
+                document.getElementById('Confirm_password_message').innerHTML = 'Passwords are matching.';
+            } else {
+                document.getElementById('Confirm_password_message').style.color = '#dc3545';
+                document.getElementById('Confirm_password_message').style.fontSize = '16px';
+                document.getElementById('Confirm_password_message').innerHTML = 'Passwords are not matching.';
+            }
+        }
+
+    </script>
+
+
+    <!-- include footer -->
+
+    <%- include('include/_footer') %>
+
+        <!-- include footer -->

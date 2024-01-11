@@ -1,0 +1,44 @@
+<!-- include header -->
+
+<%- include('include/_header') %>
+
+<!-- include header -->
+
+    <div class="container" id="books" style="border-bottom: 2px solid #3D5962;">
+
+        <!-- Show books -->
+        <% if(Books.length > 0) { %>
+
+            <div class="row justify-content-center mx-3">
+
+                <%- include('include/_showBooks') %>
+    
+            </div>
+
+        <% } else { %>
+
+            <div class="row d-block" style="padding-top: 100px; padding-bottom: 100px;">
+
+                <h1 class="ms-auto me-auto" style="width: fit-content;">No Search Results!</h1>
+    
+                <h3 class="ms-auto me-auto my-3" style="width: fit-content;">Try Searching using -</h3>
+                <ul style="width: fit-content;" class="ms-auto me-auto">
+                    <li>
+                        <h5>Book Name</h5>
+                    </li>
+                    <li>
+                        <h5>Author Name</h5>
+                    </li>
+                </ul>
+    
+            </div>
+
+        <% } %>
+
+    </div>
+
+<!-- include footer -->
+
+<%- include('include/_footer') %>
+
+<!-- include footer -->

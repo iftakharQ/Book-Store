@@ -1,0 +1,41 @@
+<% for(var i=0; i < Books.length; i++) { %>
+
+    <div class="card m-3">
+
+        <div class="row">
+            <img src="uploads/<%= Books[i].image %>" alt="" class="card-img mx-auto mt-4">
+        </div>
+
+        <div class="row mt-auto">
+
+            <div class="card-body mx-4">
+
+                <h5 class="card-title">
+                    <%= Books[i].name %>
+                </h5>
+
+                <p class="card-text">
+                    <span>By </span>
+                    <%= Books[i].author %>
+                </p>
+
+                <h5 class="card-price">
+                    <span>Price: $</span>
+                    <%= Books[i].price %>
+                </h5>
+
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <a href="/add-to-cart?id=<%= Books[i]._id %>" class="d-grid card-btn" style="text-decoration: none;">
+                <button class="btn btn-outline-info my-3" onclick="checkAlert()" type="button">Add to Cart</button>
+            </a>
+
+        </div>
+
+    </div>
+
+    <% } %>

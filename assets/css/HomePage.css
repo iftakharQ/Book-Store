@@ -1,0 +1,336 @@
+/* fonts - Lato, Rye */
+@import url('https://fonts.googleapis.com/css2?family=Barlow&family=Lato&family=Merriweather&family=PT+Sans&family=Rye&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Rye&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif&display=swap');
+
+:root {
+
+    --main-background: #06273A;
+    --background-light: #0b3f5e;
+    --background-almond: #F3F2EC;
+    --main-text-color: #F7EBC6;
+    --bootstrap-dark: #212529;
+    --bootstrap-light: #FFFFFF;
+    --bootstrap-primary: #0d6efd;
+    --bootstrap-info: #0dcaf0;
+    --bootstrap-warning: #ffc107;
+    --bootstrap-danger: #dc3545;
+    --bootstrap-success: #198754;
+    --bootstrap-purple: #6f42c1;
+    --bootstrap-indigo: #6610f2;
+    --bootstrap-teal: #20c997;
+    --gold: #C39F43;
+    --light-grey: #F6F6F6;
+}
+
+* {
+
+    padding: 0;
+    margin: 0;
+}
+
+a {
+
+    text-decoration: none;
+}
+
+.Free-delivery {
+
+    background-color: #3E5962;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.shopping-bag {
+
+    font-size: 30px;
+}
+
+.bag-count-circle {
+
+    position: relative;
+    height: 25px;
+    width: 25px;
+    background-color: #3D5962;
+    border-radius: 50%;
+    bottom: 48px;
+    left: 30px;
+}
+
+.bag-count {
+
+    font-size: 14px;
+    text-align: center;
+    position: relative;
+    top: 10%;
+    right: 0.5px;
+    color: white;
+}
+
+.search-input {
+
+    border: 2px solid #005C6D;
+}
+
+.search-button {
+
+    background-color: #005C6D;
+    color: white;
+}
+
+.search-button:hover {
+
+    background-color: #3D5962;
+    color: white;
+}
+
+.nav-logo {
+
+    font-size: 28px;
+    font-family: 'Rye', cursive
+}
+
+.below-search-books {
+
+    font-size: 18px;
+    font-weight: 600;
+    border-right: 5px double #C0A02E;
+    max-width: fit-content;
+    padding-right: 40px;
+}
+
+.below-search-nav {
+
+    font-size: 18px;
+    font-weight: 600;
+    /* border-right: 2px solid #C0A02E; */
+    max-width: fit-content;
+    padding-right: 40px;
+}
+
+#navtwo > div > ul > a .below-search-nav {
+
+    color: var(--background-light);
+    border-right: 5px double var(--gold);
+}
+
+#navtwo > div > ul > li > div > button > span {
+
+    color: var(--background-light);
+}
+
+.user-login {
+
+    font-size: 25px;
+    font-weight: 600;
+    max-width: fit-content;
+}
+
+.banner {
+
+    max-width: 100%;
+    width: 100vw;
+}
+
+.banner-text {
+
+    position: relative;
+    bottom: 60px;
+    left: 459px;
+    font-size: 14px;
+    color: #3C4D41;
+    font-weight: bold;
+}
+
+.swift-Carousel {
+
+    /* height: 500px; */
+    max-height: 500px;
+}
+
+.swift-image {
+
+    /* height: 500px; */
+    max-height: 500px;
+    max-width: 100vw;
+}
+
+.FindYourBook {
+
+    font-size: 14px;
+    font-family: 'Lato', sans-serif;
+    color: gray;
+    border-bottom: 1px solid grey;
+}
+
+.Genre-header {
+
+    text-align: center;
+    font-size: 18px;
+    font-weight: bolder;
+    color: #005C6D;
+}
+
+.Genre-button {
+
+    font-size: 16px;
+    display: inline-block;
+    border-radius: 16px;
+    border: 1px solid #ddd6cf;
+    margin-right: 4px;
+    margin-bottom: 4px;
+    padding: 8px 10px;
+    font-weight: 700;
+    height: 40px;
+    line-height: 25px;
+    text-decoration: none;
+    cursor: pointer;
+    width: fit-content;
+    color: black;
+}
+
+.orange {
+
+    color: #FFAE19;
+}
+
+.Genre-button:hover {
+
+    color: #005C6D;
+}
+
+
+/* Book Section */
+.sort-nav {
+
+    max-height: 20px;
+    max-width: 100%;
+    height: 20px;
+    width: 100vw;
+}
+
+.sort-nav-header {
+
+    font-family: 'Lato', sans-serif;
+    color: #005C6D;
+    font-weight: 800;
+}
+
+
+/* Books */
+
+.card {
+
+    max-width: 280px;
+    display: flex;
+    flex-direction: column;
+    background-color: #1B1F22;
+    border-radius: 0;
+    border: none;
+    overflow: hidden;
+    /* box-shadow: x-offset y-offset blur-radius spread-radius color; */
+    box-shadow: -10px 10px 10px darkcyan;
+}
+
+.card-img {
+
+    /* max-height: 350px; 
+    max-width: 280px;
+    height: auto;
+    width: auto; */
+
+    max-height: 220px;
+    max-width: 150px;
+    height: 100vw;
+    border: 5px inset aliceblue;
+    padding: 0;
+}
+
+.card-title {
+
+    font-size: 16px;
+    text-align: left;
+    color: aliceblue;
+    font-family: 'PT Serif', serif;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.card-text {
+
+    font-size: 14px;
+    text-align: left;
+    color: rgb(225, 223, 223);
+    font-family: 'PT Serif', serif;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.card-text span {
+
+    color: aqua;
+}
+
+.card-price {
+
+    color: aliceblue;
+    font-family: 'PT Serif', serif;
+    font-size: 18px;
+    text-align: center;
+}
+
+.card-price span {
+
+    color: #FFCA2C;
+}
+
+.card-btn {
+
+    position: absolute;
+    top: 100%;
+    background-color: #1B1F22;
+}
+
+.card:hover .card-btn {
+
+    transform: translateY(-100%);
+    transition: .5s;
+}
+
+/* Books */
+
+
+/* Paging */
+.btn-paging {
+
+    background-color: #005C6D;
+    color: white;
+}
+
+.btn-paging:hover {
+
+    background-color: #3D5962;
+    color: white;
+}
+
+/* Footer */
+.footer-link {
+
+    text-decoration: none;
+    color: #3D5962;
+    /* word-wrap: break-word; */
+}
+
+.footer-link:hover {
+
+    text-decoration: underline;
+    color: #3D5962;
+    /* word-wrap: break-word; */
+}
+
+.footer-icon:hover {
+
+    color: darkcyan;
+}
